@@ -1,0 +1,6 @@
+name: product-service
+
+server:
+  servlet:
+    context-path: /ws/api/product-service-asp/v1
+  port: 9082
