@@ -4,8 +4,6 @@ import com.bigp.productserviceasp.repository.CategoryRepository;
 import com.bigp.productserviceasp.domain.CategoryResponse;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class CategoryService {
 
@@ -17,7 +15,6 @@ public class CategoryService {
 
 
     public CategoryResponse getCategories(boolean active) {
-
         return new CategoryResponse(categoryRepository.findCategories(active));
     }
 
