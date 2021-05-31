@@ -1,0 +1,17 @@
+ext {
+ lombokVer = "1.18.16"
+ springbootVer = "2.4.5"
+}
+
+dependencies {
+ implementation("org.springframework.boot:spring-boot-starter-web:${springbootVer}")
+ compileOnly("org.projectlombok:lombok:${lombokVer}")
+ annotationProcessor("org.projectlombok:lombok:${lombokVer}")
+ // https://mvnrepository.com/artifact/com.google.guava/guava
+ implementation group: 'com.google.guava', name: 'guava', version: '30.1.1-jre'
+
+ // Para conectar a bases de datos'
+ implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.4.5'
+ implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+ implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+}
