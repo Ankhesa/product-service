@@ -1,4 +1,4 @@
-package com.bigp.productserviceasp.rest.controller.domain;
+package com.bigp.productserviceasp.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,8 @@
 package com.bigp.productserviceasp.service;
 
 
-import com.bigp.productserviceasp.rest.controller.domain.Product;
-import com.bigp.productserviceasp.rest.controller.domain.ProductResponse;
+import com.bigp.productserviceasp.domain.Product;
+import com.bigp.productserviceasp.domain.ProductResponse;
 import com.google.common.collect.Lists;
 import org.springframework.stereotype.Service;
 

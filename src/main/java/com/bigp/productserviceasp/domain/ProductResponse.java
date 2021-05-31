@@ -1,4 +1,4 @@
-package com.bigp.productserviceasp.rest.controller.domain;
+package com.bigp.productserviceasp.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,7 @@ import java.util.List;
 @Setter
 @Getter
 @AllArgsConstructor
-public class CategoryResponse {
-    private final List<Category> categories;
+public class ProductResponse {
+    private final List<Product> products;
+
 }
