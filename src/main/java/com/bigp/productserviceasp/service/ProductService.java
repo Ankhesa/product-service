@@ -20,17 +20,17 @@ public class ProductService {
     }
 
     private List<Product> getProductList() {
-        Product productSofa = buildProduct("1", "sofa", FURNITURE_CATEGORY);
-        Product productBed = buildProduct("2", "bed", FURNITURE_CATEGORY);
-        Product productChocolate = buildProduct("3", "chocolate", FOOD_CATEGORY);
-        Product productPizza = buildProduct("4", "pizza", FOOD_CATEGORY);
-        Product productRefrigerator = buildProduct("5", "refrigerator", APPLIANCE_CATEGORY);
-        Product productToaster = buildProduct("6", "toaster", APPLIANCE_CATEGORY);
+        Product productSofa = buildProduct(1L,"sofa", FURNITURE_CATEGORY);
+        Product productBed = buildProduct(2L, "bed", FURNITURE_CATEGORY);
+        Product productChocolate = buildProduct(3L, "chocolate", FOOD_CATEGORY);
+        Product productPizza = buildProduct(4L, "pizza", FOOD_CATEGORY);
+        Product productRefrigerator = buildProduct(5L, "refrigerator", APPLIANCE_CATEGORY);
+        Product productToaster = buildProduct(6L, "toaster", APPLIANCE_CATEGORY);
         return Lists.newArrayList(productSofa, productBed, productChocolate, productPizza,
                 productRefrigerator, productToaster);
     }
 
-    private Product buildProduct(String id, String description, String category) {
+    private Product buildProduct(Long id, String description, String category) {
         return new Product(id, description, category);
     }
 }
