@@ -6,5 +6,5 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class ProductRequest {
-    private Long productId;
+    private Long categoryId;
 }

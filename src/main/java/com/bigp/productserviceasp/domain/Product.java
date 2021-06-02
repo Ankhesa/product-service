@@ -1,15 +1,16 @@
 package com.bigp.productserviceasp.domain;
 
+import lombok.*;
+import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
-@AllArgsConstructor
+@Data
+@Entity
+@Table(name = "products")
 public class Product {
-    private final Long id;
-    private final String description;
-    private final String categoryId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private  Long id;
+    private  String description;
+    private Long quantity;
+    private  Long categoryId;
 }
