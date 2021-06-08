@@ -15,9 +15,8 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @PostMapping("/products")
-    @ResponseBody
-    public ResponseEntity<ProductResponse> getProductsByCategoryId(@RequestBody ProductRequest productRequest) {
-        return new ResponseEntity<>(productService.getProductsByCategoryId(productRequest.getCategoryId()), HttpStatus.OK);
+    @PostMapping("/products/{categoryId}")
+    public ResponseEntity<ProductResponse> getProductsByCategoryId(@RequestParam("categoryId") Long categoryId) {
+        return new ResponseEntity<>(productService.getProductsByCategoryId(categoryId), HttpStatus.OK);
     }
 }
