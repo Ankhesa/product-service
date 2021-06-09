@@ -1,14 +1,10 @@
 package com.bigp.productserviceasp.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
-@Setter
-@Getter
-@AllArgsConstructor
+@Data
 public class ProductResponse {
     private final List<Product> products;
 

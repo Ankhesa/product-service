@@ -2,6 +2,7 @@ package com.bigp.productserviceasp.domain;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.*;
 
 @Data
 @Entity
@@ -15,5 +16,9 @@ public class Category {
     private String name;
     private boolean active;
     private String description;
+
+    @OneToMany()
+    @JoinColumn(name = "categoryId")
+    private List<Product> products;
 
 }
