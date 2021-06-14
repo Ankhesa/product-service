@@ -1,11 +1,12 @@
 package com.bigp.productserviceasp.controller;
 
-import com.bigp.productserviceasp.domain.ProductRequest;
 import com.bigp.productserviceasp.domain.ProductResponse;
 import com.bigp.productserviceasp.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductController {
