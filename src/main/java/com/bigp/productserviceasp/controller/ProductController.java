@@ -1,6 +1,5 @@
 package com.bigp.productserviceasp.controller;
 
-import com.bigp.productserviceasp.domain.ProductRequest;
 import com.bigp.productserviceasp.domain.ProductResponse;
 import com.bigp.productserviceasp.service.ProductService;
 import org.springframework.http.HttpStatus;
@@ -18,5 +17,10 @@ public class ProductController {
     @GetMapping("/products/{categoryId}")
     public ResponseEntity<ProductResponse> getProductsByCategoryId(@PathVariable(value="categoryId") Long categoryId) {
         return new ResponseEntity<>(productService.getProductsByCategoryId(categoryId), HttpStatus.OK);
+    }
+
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<ProductResponse> getProduct(@PathVariable(value="productId") Long productId) {
+        return new ResponseEntity<>(productService.getProduct(productId),HttpStatus.OK);
     }
 }

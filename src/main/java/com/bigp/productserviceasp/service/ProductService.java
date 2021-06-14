@@ -22,4 +22,8 @@ public class ProductService {
     public ProductResponse getProductsByCategoryId(Long categoryId) {
         return new ProductResponse(productRepository.findProducts(categoryId));
     }
+
+    public ProductResponse getProduct(Long productId) {
+        return new ProductResponse(productRepository.findProductById(productId));
+    }
 }
