@@ -12,7 +12,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String rank;
+    private String ranking;
     private String name;
     private boolean active;
     private String description;
