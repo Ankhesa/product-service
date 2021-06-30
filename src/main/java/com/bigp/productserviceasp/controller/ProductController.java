@@ -17,12 +17,13 @@ public class ProductController {
     }
 
     @GetMapping("/products/{categoryId}")
-    public ResponseEntity<ProductResponse> getProductsByCategoryId(@PathVariable(value="categoryId") Long categoryId) {
+    public ResponseEntity<ProductResponse> getProductsByCategoryId(@PathVariable(value = "categoryId") Long categoryId) {
         return new ResponseEntity<>(productService.getProductsByCategoryId(categoryId), HttpStatus.OK);
     }
 
     @GetMapping("/product/{productId}")
-    public ResponseEntity<ProductResponse> getProduct(@PathVariable(value="productId") Long productId) {
-        return new ResponseEntity<>(productService.getProduct(productId),HttpStatus.OK);
+    public ResponseEntity<?> getProductById(@PathVariable(value = "productId") Long productId) {
+        return ResponseEntity.ok(productService.getProductById(productId));
+
     }
 }

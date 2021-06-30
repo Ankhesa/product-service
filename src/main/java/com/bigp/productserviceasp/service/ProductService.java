@@ -1,7 +1,9 @@
 package com.bigp.productserviceasp.service;
 
 
+import com.bigp.productserviceasp.domain.Product;
 import com.bigp.productserviceasp.domain.ProductResponse;
+import com.bigp.productserviceasp.exception.ProductNotFoundException;
 import com.bigp.productserviceasp.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +20,9 @@ public class ProductService {
         return new ProductResponse(productRepository.findProducts(categoryId));
     }
 
-    public ProductResponse getProduct(Long productId) {
-        return new ProductResponse(productRepository.findProductById(productId));
+    public Product getProductById(Long productId) {
+        return productRepository.findById(productId)
+                .orElseThrow(() ->
+                        new ProductNotFoundException("ProductId: " + productId + " not found"));
     }
 }
