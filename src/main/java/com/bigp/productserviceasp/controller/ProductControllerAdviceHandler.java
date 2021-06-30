@@ -1,5 +1,6 @@
 package com.bigp.productserviceasp.controller;
 
+import com.bigp.productserviceasp.exception.CategoryIdNotFoundException;
 import com.bigp.productserviceasp.exception.ProductNotFoundException;
 import com.google.common.collect.Maps;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,15 @@ public class ProductControllerAdviceHandler {
     public ResponseEntity<Map<String, String>> handleProductNotFoundException(ProductNotFoundException productNotFoundException) {
         Map<String, String> statusMap = Maps.newHashMap();
         statusMap.put("message", productNotFoundException.getMessage());
+
+        return new ResponseEntity<>(statusMap, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(value = {CategoryIdNotFoundException.class})
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    public ResponseEntity<Map<String, String>> handleCategoryIdNotFoundException(CategoryIdNotFoundException categoryIdNotFoundException) {
+        Map<String, String> statusMap = Maps.newHashMap();
+        statusMap.put("message", categoryIdNotFoundException.getMessage());
 
         return new ResponseEntity<>(statusMap, HttpStatus.NOT_FOUND);
     }
